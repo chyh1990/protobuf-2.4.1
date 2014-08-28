@@ -10,5 +10,6 @@ export AR="$CROSS_COMPILE"ar
 export RANLIB="$CROSS_COMPILE"ranlib
 export STRIP="$CROSS_COMPILE"strip
 
-./configure --host=arm-eabi --prefix=`pwd`/build --with-protoc=protoc
+export CXXFLAGS="-fPIC -fvisibility=hidden"
+./configure --disable-shared --host=arm-eabi --prefix=`pwd`/build --with-protoc=protoc
 make -j3 && make install
