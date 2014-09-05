@@ -11,5 +11,5 @@ export RANLIB="$CROSS_COMPILE"ranlib
 export STRIP="$CROSS_COMPILE"strip
 
 export CXXFLAGS="-fPIC -fvisibility=hidden"
-./configure --disable-shared --host=arm-eabi --prefix=`pwd`/build --with-protoc=protoc
+./configure --disable-shared --host=arm-eabi --prefix=`pwd`/build-android --with-protoc=protoc
 make -j3 && make install
