@@ -16,7 +16,7 @@ make distclean
 export CXXFLAGS="-fPIC -fvisibility=hidden -arch armv7 -arch armv7s \
 	-isysroot $IPHONEOS_SYSROOT -std=c++11 -stdlib=libc++"
 ./configure --build=armv7-apple-darwin13.0.0  --disable-shared \
-	--prefix=`pwd`/build-OS --with-protoc=protoc
+	--prefix=`pwd`/build-ios-OS --with-protoc=protoc
 make -j3 && make install
 
 make distclean
@@ -25,5 +25,5 @@ export CXXFLAGS="-fPIC -fvisibility=hidden -arch i386 \
 export LDFLAGS="-arch i386 -isysroot $IPHONESIMULATOR_SYSROOT \
 -miphoneos-version-min=7.0"
 ./configure --build=i386-apple-darwin13.0.0  --disable-shared \
-	--prefix=`pwd`/build-SIMULATOR --with-protoc=protoc
+	--prefix=`pwd`/build-ios-SIMULATOR --with-protoc=protoc
 make -j3 && make install
