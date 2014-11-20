@@ -3,7 +3,11 @@ include(CheckIncludeFiles)
 include(CheckCxxHashset)
 include(CheckCxxHashmap)
 
-check_include_files("pthread.h" HAVE_PTHREAD)
+if(IOS)
+	SET(HAVE_PTHREAD 1)
+else()
+	check_include_files("pthread.h" HAVE_PTHREAD)
+endif()
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
   include(CheckIncludeFileCXX)
