@@ -57,3 +57,5 @@ set(SOURCES
 )
 
 add_library(protobuf STATIC ${SOURCES})
+
+INSTALL(TARGETS protobuf DESTINATION lib)
