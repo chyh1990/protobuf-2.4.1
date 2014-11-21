@@ -36,6 +36,11 @@
 #ifndef GOOGLE_PROTOBUF_WIRE_FORMAT_LITE_INL_H__
 #define GOOGLE_PROTOBUF_WIRE_FORMAT_LITE_INL_H__
 
+#ifdef _MSC_VER
+// This is required for min/max on VS2013 only.
+#include <algorithm>
+#endif
+
 #include <string>
 #include <google/protobuf/stubs/common.h>
 #include <google/protobuf/message_lite.h>
