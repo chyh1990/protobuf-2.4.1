@@ -46,6 +46,11 @@
 #ifndef GOOGLE_PROTOBUF_REPEATED_FIELD_H__
 #define GOOGLE_PROTOBUF_REPEATED_FIELD_H__
 
+#ifdef _MSC_VER
+// This is required for min/max on VS2013 only.
+#include <algorithm>
+#endif
+
 #include <string>
 #include <iterator>
 #include <google/protobuf/stubs/common.h>
